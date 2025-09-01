@@ -80,8 +80,6 @@ Update the following files to customize your portfolio:
 ### Links
 Update the GitHub and other external links in `src/app/page.tsx`:
 - GitHub profile URL
-- Competitive Programming Initiative link
-- USACO Guide link
 
 ## Deployment
 
@@ -99,6 +97,3 @@ The site is optimized for deployment on Vercel:
 - GitHub activity feed
 - More animations and interactions
 
-## License
-
-MIT License - feel free to use this template for your own portfolio!

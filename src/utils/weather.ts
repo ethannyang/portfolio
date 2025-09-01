@@ -8,8 +8,11 @@ export interface WeatherData {
 export async function fetchWeatherData(): Promise<WeatherData> {
   // Check if API key is available
   const API_KEY = process.env.NEXT_PUBLIC_WEATHER_API_KEY;
-  const lat = process.env.NEXT_PUBLIC_DEFAULT_LAT || '37.7749';
-  const lon = process.env.NEXT_PUBLIC_DEFAULT_LON || '-122.4194';
+  const lat = process.env.NEXT_PUBLIC_DEFAULT_LAT || '37.8715';
+  const lon = process.env.NEXT_PUBLIC_DEFAULT_LON || '-122.2730';
+  
+  // Force location to always be Berkeley
+  const FORCED_LOCATION = 'Berkeley';
   
   if (API_KEY && API_KEY !== 'a6dc2812a0bfa34318691754ba702d87') {
     try {
@@ -38,14 +41,37 @@ export async function fetchWeatherData(): Promise<WeatherData> {
     }
   }
   
-  // Mock data for development or when API key is not available
+  // Enhanced mock data for development or when API key is not available
   const now = new Date();
-  const isDaytime = now.getHours() >= 6 && now.getHours() <= 18;
+  const hour = now.getHours();
+  const isDaytime = hour >= 6 && hour <= 18;
+  
+  // Generate realistic temperature based on time of day
+  let temperature = 75; // Base temperature
+  if (hour >= 6 && hour <= 12) {
+    temperature = 70 + Math.floor(Math.random() * 15); // Morning: 70-85°F
+  } else if (hour >= 13 && hour <= 18) {
+    temperature = 80 + Math.floor(Math.random() * 15); // Afternoon: 80-95°F
+  } else if (hour >= 19 && hour <= 23) {
+    temperature = 65 + Math.floor(Math.random() * 15); // Evening: 65-80°F
+  } else {
+    temperature = 55 + Math.floor(Math.random() * 15); // Night: 55-70°F
+  }
+  
+  // Generate realistic weather conditions based on time
+  let condition = 'clear';
+  if (hour >= 6 && hour <= 18) {
+    const conditions = ['clear', 'sunny', 'partly cloudy', 'cloudy'];
+    condition = conditions[Math.floor(Math.random() * conditions.length)];
+  } else {
+    const conditions = ['clear', 'cloudy', 'partly cloudy'];
+    condition = conditions[Math.floor(Math.random() * conditions.length)];
+  }
   
   return {
-    temperature: 81,
-    condition: 'sunny',
+    temperature,
+    condition,
     isDaytime,
-    location: 'san francisco'
+    location: FORCED_LOCATION
   };
 }

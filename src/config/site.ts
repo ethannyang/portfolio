@@ -4,16 +4,18 @@ export const siteConfig = {
   description: 'Personal portfolio',
   
   // Personal Information
-  tagline: "I'm a CS student at UC Berkeley interested in machine learning and software engineering.",
-  about: "I'm passionate about building meaningful solutions through artificial intelligence, software engineering, an product management.",
+  tagline: "I'm a CS student at UC Berkeley passionate about building meaningful products through AI and software engineering.",
+  about: "",
   
   // Links
-  github: 'https://github.com/ethannyang'
+  github: 'https://github.com/ethannyang',
+  claythis: "https://claythis.com",
+
   
   // Location
-  location: 'san francisco',
-  defaultLat: '37.7749',
-  defaultLon: '-122.4194',
+  location: 'Berkeley',
+  defaultLat: '37.8715',
+  defaultLon: '-122.2730',
   
   // Social Links (add more as needed)
   social: {
@@ -22,7 +24,8 @@ export const siteConfig = {
   },
   
   // SEO
-  keywords: ['Ethan Yang', 'Machine Learning', 'Portfolio', 'Software Engineer', 'Claythis'] as string[],
+  keywords: ['Ethan Yang', 'software engineering', 'Berkeley', 'internships', 'UC Berkeley', 'machine learning', 'student', 'summer internship', 
+    'product management', 'AI', 'artificial intelligence', 'full-stack', 'developer', 'portfolio', 'projects'],
   author: 'Ethan Yang',
   
   // Theme

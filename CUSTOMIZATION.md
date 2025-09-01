@@ -11,38 +11,7 @@ This guide will help you customize the portfolio website for your own use.
 
 ## Configuration File
 
-The main configuration file is `src/config/site.ts`. Update these values:
-
-```typescript
-export const siteConfig = {
-  name: 'Ethan Yang',                    // Your full name
-  title: 'Ethan Yang - Portfolio',       // Page title
-  description: "I'm a CS student at UC Berkeley passionate about building meaningful products",   // Meta description
-  
-  // Personal Information
-  tagline: "I'm a CS student at UC Berkeley passionate about building meaningful products",      // Hero section tagline
-  about: "I'm currently a machine learning intern at Claythis, engineering a ",          // About section text
-  
-  // Links
-  github: 'https://github.com/yourusername',
-  claythis: "https://claythis.com"
-  
-  // Location (for weather display)
-  location: 'Berkeley',
-  defaultLat: '37.8715',  // Your latitude
-  defaultLon: '122.2730', // Your longitude
-  
-  // Social Links
-  social: {
-    github: 'https://github.com/ethannyang',
-    linkedin: 'https://linkedin.com/in/ethanyang10'
-  },
-  
-  // SEO
-  keywords: ['Ethan Yang', 'software engineering', 'Berkeley', 'internships', 'UC Berkeley', 'machine learning', 'student', 'summer', 'product management'],
-  author: 'Ethan Yang',
-};
-```
+The main configuration file is `src/config/site.ts`. Update those values
 
 ## Customizing the Design
 
@@ -148,44 +117,4 @@ Consider adding these features:
 - [ ] Analytics integration
 - [ ] Newsletter signup
 
-## Support
 
-If you need help customizing the portfolio:
-
-1. Check the [Next.js documentation](https://nextjs.org/docs)
-2. Review the [Tailwind CSS documentation](https://tailwindcss.com/docs)
-3. Look at the existing code structure for examples
-
-## License
-
-This template is MIT licensed - feel free to use it for your own portfolio!
-
-## Customizing the About Me Section with Links
-
-To add a clickable link (e.g., to Claythis) in your About Me section:
-
-1. **Edit the `about` field in `src/config/site.ts`**  
-   You can use plain text, but for clickable links, use JSX in the component that renders the About section.
-
-2. **Example Implementation in About Component**  
-   In your About component (e.g., `src/components/About.tsx`), use the `about` text and insert a link:
-
-   ```tsx
-   // src/components/About.tsx
-   import { siteConfig } from "@/config/site";
-   // ...existing code...
-   <p>
-     I'm currently a machine learning intern at{" "}
-     <a href={siteConfig.claythis} target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">
-       Claythis
-     </a>
-     , engineering a ...
-   </p>
-   // ...existing code...
-   ```
-
-3. **Update the `about` field**  
-   Optionally, you can split the `about` text to make inserting the link easier, or keep it as is and handle the link in the component.
-
-**Tip:**  
-Do not include HTML/JSX in the config file. Instead, insert the link in your React component for best results

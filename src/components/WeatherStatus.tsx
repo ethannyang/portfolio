@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { fetchWeatherData, type WeatherData } from '@/utils/weather';
+import { siteConfig } from '@/config/site';
 
 export default function WeatherStatus() {
   const [weather, setWeather] = useState<WeatherData | null>(null);
@@ -17,10 +18,10 @@ export default function WeatherStatus() {
         // Fallback data
         const now = new Date();
         setWeather({
-          temperature: 72,
+          temperature: 81,
           condition: 'clear',
           isDaytime: now.getHours() >= 6 && now.getHours() <= 18,
-          location: 'san francisco'
+          location: siteConfig.location
         });
       } finally {
         setLoading(false);
@@ -43,10 +44,12 @@ export default function WeatherStatus() {
   }
 
   const timeStatus = weather.isDaytime ? 'daytime' : 'nighttime';
+  const weatherEmoji = weather.condition === 'clear' || weather.condition === 'sunny' ? '☀️' : 
+                       weather.condition === 'cloudy' ? '☁️' : '⛅';
 
   return (
     <div className="text-sm text-gray-500 dark:text-gray-400">
-      it&apos;s {timeStatus} and {weather.temperature}° fahrenheit in {weather.location}
+      {weatherEmoji} it&apos;s {timeStatus} and {weather.temperature}° fahrenheit in {weather.location}
     </div>
   );
 }

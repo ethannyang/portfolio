@@ -13,6 +13,11 @@ export default function ThemeToggle() {
     if (theme === 'dark' || (!theme && prefersDark)) {
       setIsDark(true);
       document.documentElement.classList.add('dark');
+      document.documentElement.style.setProperty('--background', '#0a0a0a');
+      document.documentElement.style.setProperty('--foreground', '#ededed');
+    } else {
+      document.documentElement.style.setProperty('--background', '#ffffff');
+      document.documentElement.style.setProperty('--foreground', '#171717');
     }
   }, []);
 
@@ -22,9 +27,13 @@ export default function ThemeToggle() {
     
     if (newTheme === 'dark') {
       document.documentElement.classList.add('dark');
+      document.documentElement.style.setProperty('--background', '#0a0a0a');
+      document.documentElement.style.setProperty('--foreground', '#ededed');
       localStorage.setItem('theme', 'dark');
     } else {
       document.documentElement.classList.remove('dark');
+      document.documentElement.style.setProperty('--background', '#ffffff');
+      document.documentElement.style.setProperty('--foreground', '#171717');
       localStorage.setItem('theme', 'light');
     }
   };
@@ -32,13 +41,13 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+      className="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-200 hover:scale-110 focus:scale-110 group"
       aria-label="Toggle theme"
     >
       {isDark ? (
-        <Sun className="w-5 h-5" />
+        <Sun className="w-5 h-5 text-sky-400" />
       ) : (
-        <Moon className="w-5 h-5" />
+        <Moon className="w-5 h-5 text-sky-400" />
       )}
     </button>
   );

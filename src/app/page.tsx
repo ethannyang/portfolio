@@ -92,7 +92,7 @@ export default function Home() {
           {/* About Section */}
           <section className="space-y-4 text-lg leading-relaxed">
             <p>
-              My latest experience was at Claythis as a Machine Learning Intern @{" "}
+              My latest experience was as a Machine Learning Intern @{" "}
               {siteConfig.claythis ? (
                 <Link
                   href={siteConfig.claythis}

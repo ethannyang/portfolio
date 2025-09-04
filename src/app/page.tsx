@@ -12,14 +12,21 @@ export default function Home() {
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
         <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center">
-            <Image
-              src="/logo.svg"
-              alt="Ethan Yang Logo"
-              width={48}
-              height={48}
-              className="w-12 h-12 transition-transform duration-200 hover:scale-110 focus:scale-110"
-              style={{ filter: 'brightness(0) saturate(100%) invert(48%) sepia(79%) saturate(2476%) hue-rotate(190deg) brightness(118%) contrast(96%)' }}
-            />
+            <Link
+              href={siteConfig.social.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <Image
+                src="/logo.svg"
+                alt="Ethan Yang Logo"
+                width={48}
+                height={48}
+                className="w-12 h-12 transition-transform duration-200 hover:scale-110 focus:scale-110"
+                style={{ filter: 'brightness(0) saturate(100%) invert(48%) sepia(79%) saturate(2476%) hue-rotate(190deg) brightness(118%) contrast(96%)' }}
+              />
+            </Link>
           </div>
           
           <div className="flex items-center space-x-4">

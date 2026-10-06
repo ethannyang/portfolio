@@ -41,13 +41,14 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-200 hover:scale-110 focus:scale-110 group"
-      aria-label="Toggle theme"
+      className="inline-flex h-10 w-10 items-center justify-center rounded-full text-gray-500 hover:text-foreground hover:bg-gray-100 dark:hover:bg-gray-800"
+      aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
+      title={isDark ? "Switch to light theme" : "Switch to dark theme"}
     >
       {isDark ? (
-        <Sun className="w-5 h-5 text-sky-400" />
+        <Sun className="w-[18px] h-[18px]" />
       ) : (
-        <Moon className="w-5 h-5 text-sky-400" />
+        <Moon className="w-[18px] h-[18px]" />
       )}
     </button>
   );

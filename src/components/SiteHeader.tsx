@@ -15,7 +15,7 @@ export default function SiteHeader() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/85 backdrop-blur-xl border-b border-gray-200/70 dark:border-gray-800/70">
       <div className="max-w-[880px] mx-auto px-5 sm:px-6 h-20 flex items-center justify-between gap-3">
         <Link href="/" aria-label="Ethan Yang home" className="flex items-center gap-3 rounded-md">
-          <Image src="/logo.svg" alt="" width={36} height={36} className="w-9 h-9" style={{ filter: 'brightness(0) saturate(100%) invert(48%) sepia(79%) saturate(2476%) hue-rotate(190deg) brightness(118%) contrast(96%)' }} />
+          <Image src="/logo.svg" alt="" width={36} height={36} className="w-9 h-9 brightness-0 dark:invert" />
           <span className="hidden sm:block text-sm font-semibold tracking-tight">Ethan Yang</span>
         </Link>
         <nav aria-label="Personal links" className="flex items-center gap-1 sm:gap-2">

@@ -1,6 +1,5 @@
 import Link from "next/link";
 import SiteHeader from "@/components/SiteHeader";
-import CursorGlow from "@/components/CursorGlow";
 import WeatherStatus from "@/components/WeatherStatus";
 import { siteConfig } from "@/config/site";
 import HeroSection from "@/components/HeroSection";
@@ -9,7 +8,6 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
-      <CursorGlow />
 
       {/* Main Content */}
       <main className="pt-32 pb-12">

@@ -61,29 +61,39 @@ body {
   outline-offset: 2px;
 }
 
-/* A soft spectrum follows the pointer without intercepting links. */
-.cursor-glow {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 340px;
-  height: 340px;
+/* Reveal a rainbow field of bits only around the pointer inside the hero. */
+.binary-spotlight {
+  --pointer-x: 50%;
+  --pointer-y: 50%;
+  position: absolute;
+  inset: 0;
   pointer-events: none;
-  z-index: 60;
-  border-radius: 50%;
-  background: conic-gradient(from 0deg, #ff6685, #ffbd66, #ffe78a, #77e0aa, #74cfff, #b595ff, #ff6685);
-  filter: blur(42px);
   opacity: 0;
-  transition: opacity 180ms ease;
-  will-change: transform;
-  -webkit-mask-image: radial-gradient(circle, black 0%, transparent 68%);
-  mask-image: radial-gradient(circle, black 0%, transparent 68%);
+  transition: opacity 220ms ease;
+  -webkit-mask-image: radial-gradient(circle 180px at var(--pointer-x) var(--pointer-y), black 15%, transparent 100%);
+  mask-image: radial-gradient(circle 180px at var(--pointer-x) var(--pointer-y), black 15%, transparent 100%);
 }
-.cursor-glow[data-visible="true"] { opacity: 0.3; }
-.dark .cursor-glow[data-visible="true"] { opacity: 0.22; }
+.binary-spotlight[data-visible="true"] { opacity: 1; }
+.binary-digits, .binary-wash {
+  position: absolute;
+  inset: 0;
+  background: conic-gradient(from 30deg at var(--pointer-x) var(--pointer-y), #f477a6, #e6ad38, #69c76c, #49bcd8, #9890ef, #f477a6);
+}
+.binary-digits {
+  opacity: 0.65;
+  -webkit-mask-image: url('/binary-pattern.svg');
+  mask-image: url('/binary-pattern.svg');
+  -webkit-mask-size: 288px 132px;
+  mask-size: 288px 132px;
+  -webkit-mask-repeat: repeat;
+  mask-repeat: repeat;
+}
+.binary-wash { opacity: 0.07; }
+.dark .binary-digits { opacity: 0.8; }
+.dark .binary-wash { opacity: 0.12; }
 
 @media (prefers-reduced-motion: reduce), (hover: none), (pointer: coarse) {
-  .cursor-glow { display: none; }
+  .binary-spotlight { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; }

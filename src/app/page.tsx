@@ -99,20 +99,20 @@ export default function Home() {
           {/* About Section */}
           <section className="space-y-4 text-lg leading-relaxed">
             <p>
-              My latest experience was as a Machine Learning Intern @{" "}
-              {siteConfig.claythis ? (
+              My latest experience was as a Software Engineer Intern @{" "}
+              {siteConfig.harvey ? (
                 <Link
-                  href={siteConfig.claythis}
+                  href={siteConfig.harvey}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-600 dark:text-blue-400 hover:underline transition-colors"
                 >
-                  Claythis
+                  Harvey
                 </Link>
               ) : (
-                "Claythis"
+                "Harvey"
               )}
-              , engineering a pipeline for 2D character animation to automate character posing, which cut manual animation time significantly.
+              , building an auto-context management system for AI conversations, which saved roughly $30M in annual token costs.
             </p>
             
             <p>

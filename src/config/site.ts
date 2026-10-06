@@ -9,7 +9,7 @@ export const siteConfig = {
   
   // Links
   github: 'https://github.com/ethannyang',
-  claythis: "https://claythis.com",
+  harvey: "https://www.harvey.ai",
 
   
   // Location

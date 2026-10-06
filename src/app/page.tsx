@@ -39,7 +39,7 @@ export default function Home() {
               ) : (
                 "Harvey"
               )}
-              , implementing an industry-standard auto-context management system for Harvey&apos;s flagship AI conversation product.
+              , implementing an auto-context management system for Harvey&apos;s flagship AI conversation product.
             </p>
             
             <p>
